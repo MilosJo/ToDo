@@ -1,8 +1,8 @@
 body {
 	font-family: sans-serif;
 	overflow-x: hidden;
-	background-image: url(https://images3.alphacoders.com/823/82317.jpg);
-	position: relative;
+	background: url(https://images3.alphacoders.com/823/82317.jpg) center;
+	background-size: 100%;
 }
 .submit {
     border: 1px solid #ccc;
