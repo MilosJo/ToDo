@@ -72,5 +72,6 @@ p.poruka {
 	width: 53%;
 }
 .input-dugme button {
-	width: 29%;
+	width: 28%;
+	text-align: center;
 }
