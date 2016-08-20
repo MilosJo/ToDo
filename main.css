@@ -64,3 +64,13 @@ span.linija-animacija.strike span.animacija {
 p.poruka {
 	text-align: center;
 }
+
+.input-dugme {
+	width: 100%;
+}
+.input-dugme input {
+	width: 53%;
+}
+.input-dugme button {
+	width: 29%;
+}
