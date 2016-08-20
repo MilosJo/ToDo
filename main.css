@@ -1,0 +1,65 @@
+body {
+	font-family: sans-serif;
+}
+.submit {
+    border: 1px solid #ccc;
+    color: #fff;
+    padding: 15px 30px;
+    height: auto;
+    border-radius: 0;
+    font-size: 16px;
+}
+input {
+	border: 1px solid #ccc;
+    padding: 15px 30px;
+    height: auto;
+    border-radius: 0;
+    font-size: 16px;
+}
+li {
+	border: 1px solid #ccc;
+    padding: 15px 30px;
+    height: auto;
+    border-radius: 0;
+    font-size: 16px;
+    margin-top: 3px;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.wrapper {
+	width: 377px;
+	margin: 0 auto;
+}
+h1 {
+	text-align: center;
+	color: #686464;
+}
+
+.kraj,
+.zavrsio {
+	float: right;
+}
+
+span.linija-animacija {
+    position:relative;
+    display:inline-block;        
+}
+span.animacija {
+display:inline-block;
+    position:absolute;
+    left:0;
+    top:50%;
+    width:0;
+    border-top:1px solid grey;
+    -webkit-transition: width 0.5s ease-in;
+}
+span.linija-animacija.strike span.animacija {
+    width:100%;    
+}
+
+p.poruka {
+	text-align: center;
+}
