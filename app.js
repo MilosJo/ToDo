@@ -54,7 +54,7 @@ $("ul").on('click', '.zavrsio', function() {
 		return item.done;
 	});
 	if (zavrseno) {
-		$('p.poruka').show().effect('shake');
+		$('p.poruka').show().effect('pulsate');
 	}else{
 		$('p.poruka').hide();
 	}
@@ -71,7 +71,7 @@ $("ul").on('click', '.zavrsio', function() {
 
 $('ul').on('click', '#end', function() {
 
-	var $li = $( this ).parent().slideUp("slow", function(){
+	var $li = $( this ).parent().effect("explode", function(){
 		$li.remove();		
 	});
 	obrisiIzLocalStorage($li.index());
@@ -123,4 +123,6 @@ function iscitajLocalStorage() {
 }
 
 iscitajLocalStorage();
+
+/*ROTACIJA SMAJLIJA*/
 

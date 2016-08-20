@@ -1,11 +1,13 @@
 body {
 	font-family: sans-serif;
 	overflow-x: hidden;
+	background-image: url(https://images3.alphacoders.com/823/82317.jpg);
+	position: relative;
 }
 .submit {
     border: 1px solid #ccc;
     color: #fff;
-    padding: 15px 30px;
+    padding: 15px 0;
     height: auto;
     border-radius: 0;
     font-size: 16px;
@@ -36,7 +38,7 @@ ul {
 }
 h1 {
 	text-align: center;
-	color: #686464;
+	color: #dbe6e9;
 }
 
 .kraj,
@@ -63,6 +65,9 @@ span.linija-animacija.strike span.animacija {
 
 p.poruka {
 	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 700;
 }
 
 .input-dugme {
@@ -73,4 +78,17 @@ p.poruka {
 }
 .input-dugme button {
 	width: 28%;
+	background-color: #091e49;
 }
+
+
+ul {
+	overflow: hidden;
+}
+
+button.zavrsio,
+button#kraj {
+	color: #091e49;
+}
+
+/*   SMAJLI   */
