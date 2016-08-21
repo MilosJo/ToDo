@@ -1,8 +1,9 @@
 body {
+	margin: 0;
+	border: 0;
+	padding: 0;
 	font-family: sans-serif;
 	overflow-x: hidden;
-	background: url(https://images3.alphacoders.com/823/82317.jpg) center;
-	background-size: 100%;
 }
 .submit {
     border: 1px solid #ccc;
@@ -20,12 +21,14 @@ input {
     font-size: 16px;
 }
 li {
-	border: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
     padding: 15px 30px;
     height: auto;
     border-radius: 0;
     font-size: 16px;
     margin-top: 3px;
+    color: #fff;
+    overflow: hidden;
 }
 ul {
 	margin: 0;
@@ -33,12 +36,18 @@ ul {
 	list-style: none;
 }
 .wrapper {
-	width: 350px;
+	display: block;
 	margin: 0 auto;
+	width: 350px;
+	background-color: #010101;
+	opacity: .7;
+	overflow: hidden;
 }
 h1 {
 	text-align: center;
 	color: #dbe6e9;
+	margin: 0;
+	padding: 5%;
 }
 
 .kraj,
@@ -46,22 +55,6 @@ h1 {
 	float: right;
 }
 
-span.linija-animacija {
-    position:relative;
-    display:inline-block;        
-}
-span.animacija {
-display:inline-block;
-    position:absolute;
-    left:0;
-    top:50%;
-    width:0;
-    border-top:1px solid grey;
-    -webkit-transition: width 0.5s ease-in;
-}
-span.linija-animacija.strike span.animacija {
-    width:100%;    
-}
 
 p.poruka {
 	text-align: center;
@@ -90,5 +83,6 @@ button.zavrsio,
 button#kraj {
 	color: #091e49;
 }
+
 
 /*   SMAJLI   */

@@ -1,8 +1,8 @@
 function dodajItem(s){
     // <span class="linija-animacija"><span="animacija">
 	var spanAnimacija = '<span class="linija-animacija"><span class="animacija"></span>' + s + '</span>';
-	var btnObrisi = '<button id="end" class="kraj">obrisi</button>';
-	var btnDone = '<button class="zavrsio">zavrsio</button>';
+	var btnObrisi = '<button id="end" class="kraj">Remove</button>';
+	var btnDone = '<button class="zavrsio">Done</button>';
 	$( "ul" ).append( '<li id="textInput">' + spanAnimacija + btnObrisi + btnDone + '</li>'  );
 }
 
@@ -31,15 +31,15 @@ $("ul").on('click', '.zavrsio', function() {
 	if ($span.css('text-decoration') === 'line-through') {
 		$span.css({textDecoration: 'none'}).animate({
             opacity: 1
-        }).css({ color: 'red'})
+        })
         
-       		$(this).text('zavrsio');
+       		$(this).text('Done');
 	} else {
 		$span.css({textDecoration: 'line-through'}).animate({
             opacity: 0.5
-        }).css({ color: 'green'});
+        })
 
-        $(this).text('Nije zavrseno');
+        $(this).text('Undo');
 	}
 	var storage = localStorage.getItem('lista')
 	var lista = [];
@@ -71,7 +71,7 @@ $("ul").on('click', '.zavrsio', function() {
 
 $('ul').on('click', '#end', function() {
 
-	var $li = $( this ).parent().effect("explode", function(){
+	var $li = $( this ).parent().effect("blind", function(){
 		$li.remove();		
 	});
 	obrisiIzLocalStorage($li.index());
@@ -117,7 +117,7 @@ function iscitajLocalStorage() {
 		if (item.done) {
 			var $li = $('li').eq(index);
 			$li.find('span').css({textDecoration: 'line-through'});
-			$li.find('.zavrsio').text('Nije zavrseno');
+			$li.find('.zavrsio').text('Undo');
 		}
 	});
 }
