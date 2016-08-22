@@ -124,7 +124,7 @@ function iscitajLocalStorage() {
 		dodajItem(item.val);
 		if (item.done) {
 			var $li = $('li').eq(index);
-			$li.find('span').css({textDecoration: 'line-through'});
+			$li.find('span').css({textDecoration: 'line-through', opacity: '.5'});
 			$li.find('.zavrsio').text('Undo');
 		}
 	});
