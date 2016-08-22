@@ -106,7 +106,7 @@ function prikaziZavrsnuPoruku(lista){
 	var zavrseno = lista.every(function(item){
 		return item.done;
 	});
-	if (zavrseno) {
+	if (zavrseno && lista.length > 0) {
 		$('p.poruka').show().effect('pulsate');
 	}else{
 		$('p.poruka').hide();
