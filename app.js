@@ -50,17 +50,8 @@ $("ul").on('click', '.zavrsio', function() {
 	if (lista[index]) {
 		lista[index].done = !lista[index].done;
 	}
-	var zavrseno = lista.every(function(item){
-		return item.done;
-	});
-	if (zavrseno) {
-		$('p.poruka').show().effect('pulsate');
-	}else{
-		$('p.poruka').hide();
-	}
-
+	prikaziZavrsnuPoruku(lista);
 	localStorage.setItem('lista', JSON.stringify(lista));
-	prikaziZavrsnuPoruku();
 });
 
 
@@ -95,6 +86,7 @@ function dodajULocalStorage(val) {
 	lista.push({
 		val: val
 	});
+	prikaziZavrsnuPoruku(lista);
 	localStorage.setItem('lista', JSON.stringify(lista));
 }
 
@@ -105,12 +97,12 @@ function obrisiIzLocalStorage(index) {
 		lista = JSON.parse(storage);
 	}
 
-	lista.splice(index, 1)
+	lista.splice(index, 1);
+	prikaziZavrsnuPoruku(lista);
 	localStorage.setItem('lista', JSON.stringify(lista));
 }
 
-function prikaziZavrsnuPoruku(){
-
+function prikaziZavrsnuPoruku(lista){
 	var zavrseno = lista.every(function(item){
 		return item.done;
 	});
@@ -136,6 +128,7 @@ function iscitajLocalStorage() {
 			$li.find('.zavrsio').text('Undo');
 		}
 	});
+	prikaziZavrsnuPoruku(lista);
 }
 
 iscitajLocalStorage();
