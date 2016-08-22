@@ -1,9 +1,9 @@
 function dodajItem(s){
     // <span class="linija-animacija"><span="animacija">
 	var spanAnimacija = '<span class="linija-animacija"><span class="animacija"></span>' + s + '</span>';
-	var btnObrisi = '<button id="end" class="kraj">Remove</button>';
+	var btnObrisi = '<button class="end kraj">Remove</button>';
 	var btnDone = '<button class="zavrsio">Done</button>';
-	$( "ul" ).append( '<li id="textInput">' + spanAnimacija + btnObrisi + btnDone + '</li>'  );
+	$( "ul" ).append( '<li class="textInput">' + spanAnimacija + btnObrisi + btnDone + '</li>'  );
 }
 
 function pokusajDaDodasItem() {
@@ -60,7 +60,10 @@ $("ul").on('click', '.zavrsio', function() {
 	}
 
 	localStorage.setItem('lista', JSON.stringify(lista));
+	prikaziZavrsnuPoruku();
 });
+
+
 
 // $('ul').on('click', 'button', function() {
 // 	var $li = $( this ).parent().slideUp();
@@ -69,12 +72,14 @@ $("ul").on('click', '.zavrsio', function() {
 // 	}, 400);
 // });
 
-$('ul').on('click', '#end', function() {
+$('ul').on('click', '.end', function() {
 
-	var $li = $( this ).parent().effect("blind", function(){
+	var $li = $( this ).parent();
+	var index = $li.index();
+	$li.effect("blind", function(){
 		$li.remove();		
 	});
-	obrisiIzLocalStorage($li.index());
+	obrisiIzLocalStorage(index);
 });
 
 
@@ -101,8 +106,19 @@ function obrisiIzLocalStorage(index) {
 	}
 
 	lista.splice(index, 1)
-
 	localStorage.setItem('lista', JSON.stringify(lista));
+}
+
+function prikaziZavrsnuPoruku(){
+
+	var zavrseno = lista.every(function(item){
+		return item.done;
+	});
+	if (zavrseno) {
+		$('p.poruka').show().effect('pulsate');
+	}else{
+		$('p.poruka').hide();
+	}
 }
 
 function iscitajLocalStorage() {
